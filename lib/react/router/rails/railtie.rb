@@ -23,11 +23,7 @@ module React
         end
 
         config.after_initialize do |app|
-          app.config.react_router.routes_js = lambda {
-            app.config.react_router.route_filenames.map do |filename|
-              app.assets[filename].to_s
-            end.join(";")
-          }
+          app.config.react_router.routes_js = "app/assets/javascripts/components.js;"
 
           do_setup = lambda do
             cfg = app.config.react_router
