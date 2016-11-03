@@ -9,11 +9,9 @@ module React
         config.react_router.max_renderers = 10
         config.react_router.timeout = 20 # seconds
 
-        env = ::Sprockets::Railtie.build_environment(::Rails.application)
-
-        config.react_router.react_js = lambda { File.read(env.find_asset('react.js').filename) }
-        config.react_router.react_server_js = lambda { File.read(env.find_asset('react-server.js').filename) }
-        config.react_router.react_router_js = lambda { File.read(env.find_asset('react-router.js').filename) }
+        config.react_router.react_js = lambda { File.read("canary.js") }
+        config.react_router.react_server_js = lambda { File.read("") }
+        config.react_router.react_router_js = lambda { File.read("") }
         config.react_router.route_filenames = ['components.js']
 
         # Include the react-router-rails view helper lazily
