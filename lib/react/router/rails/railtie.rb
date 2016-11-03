@@ -9,7 +9,7 @@ module React
         config.react_router.max_renderers = 10
         config.react_router.timeout = 20 # seconds
 
-        env = Sprockets::Railtie.build_environment(::Rails.application)
+        env = this.build_environment(::Rails.application)
 
         config.react_router.react_js = lambda { File.read(env.find_asset('react.js').filename) }
         config.react_router.react_server_js = lambda { File.read(env.find_asset('react-server.js').filename) }
