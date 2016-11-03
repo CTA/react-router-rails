@@ -9,9 +9,9 @@ module React
         config.react_router.max_renderers = 10
         config.react_router.timeout = 20 # seconds
 
-        config.react_router.react_js = lambda { File.read("../../../../../react-rails-1.9.0/lib/assets/react-source/production-with-addons/react-server.js") }
-        config.react_router.react_server_js = lambda { File.read("../../../../../react-rails-1.9.0/lib/assets/react-source/production-with-addons/react-server.js") }
-        config.react_router.react_router_js = lambda { File.read("../../../../vendor/assets/react_router.js") }
+        config.react_router.react_js = lambda { File.read("react-server.js") }
+        config.react_router.react_server_js = lambda { File.read("react-server.js") }
+        config.react_router.react_router_js = lambda { File.read("react_router.js") }
         config.react_router.route_filenames = ['components.js']
 
         # Include the react-router-rails view helper lazily
